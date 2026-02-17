@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .first-love-section {
+            padding: 100px 20px;
+            background: #fdf5e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .soul-container {
+            max-width: 1100px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Polaroid Photo Frame */
+        .photo-frame {
+            background: white;
+            padding: 15px 15px 60px 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
+            transition: transform 0.5s ease;
+            max-width: 320px;
+            border: 1px solid #ddd;
+        }
+
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            filter: sepia(30%);
+        }
+
+        .photo-frame .caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #5c4033;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        /* Letter Styling */
+        .message-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            border-left: 5px solid #b36a5e;
+        }
+
+        .message-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #b36a5e;
+            margin-bottom: 20px;
+        }
+
+        .message-content p {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #4a332d;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .soul-container { flex-direction: column; text-align: center; }
+            .message-content { border-left: none; border-top: 5px solid #b36a5e; }
+        }
+    
+    /* ... (ager style gulo thakbe) ... */
+    
+    .soul-message-title {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3.2rem;
+        color: #b36a5e;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .sub-caption {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #8c7b6c;
+        margin-bottom: 30px;
+        display: block;
+    }
+</style>
+
+<section class="first-love-section">
+    <div class="soul-container">
+        
+        <div class="photo-frame" data-aos="fade-right">
+            <img src="https://images.unsplash.com/photo-1516589174184-c68526674fd6?auto=format&fit=crop&q=80&w=600" alt="Memory">
+            <div class="caption">The first love...</div>
+        </div>
+
+        <div class="message-content" data-aos="fade-left">
+            <span class="sub-caption">Words I will never say</span>
+            <h2 class="soul-message-title">Echoes of my Silence</h2>
+            <p>
+               You know, Gobindo, you were my first love… or maybe I shouldn’t say were, because you are still here,<br> and perhaps you always will be. I don’t know why the universe separated us, but believe me, not a single day has passed that I haven’t thought of you.
+
+I love you… maybe I never knew how to show it the way I wanted to.<br> You know, I think of you so often, and when I do, I look at your pictures. It hurts sometimes,<br> I know—I was selfish, and that’s why seeing you with someone else feels painful—but I know, someday, <br>I will get used to it.
+
+I tried to forget you, but I couldn’t… so I stopped trying.<br> As long as I live, I will live with this ache, and somehow, that’s what keeps me going. I miss you so much… something I will never say out loud.
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

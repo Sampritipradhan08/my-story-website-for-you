@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Heart Still Waiting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fdf5e6;
+            overflow-x: hidden;
+        }
+
+        /* Section Container */
+        .for-him {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #fdf5e6 0%, #f7e1d7 100%);
+            padding: 60px 20px;
+            /* FIX: Jate icons baire na jay */
+            overflow: hidden; 
+        }
+
+        /* Decorative Floating Elements */
+        .heart-float {
+            position: absolute;
+            color: rgba(179, 106, 94, 0.2);
+            font-size: 24px;
+            pointer-events: none;
+            z-index: 1;
+            /* FIX: Start position section-er niche */
+            bottom: -50px; 
+            animation: floatUp 8s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { 
+                transform: translateY(0) rotate(0deg); 
+                opacity: 0; 
+            }
+            20% { 
+                opacity: 0.8; 
+            }
+            100% { 
+                /* FIX: Sudhu section height porjonto uthbe */
+                transform: translateY(-100vh) rotate(360deg); 
+                opacity: 0; 
+            }
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            z-index: 2;
+        }
+
+        /* Text Styling */
+        .text-box {
+            flex: 1.2;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .text-box h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #5c4033;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 1.2s ease;
+        }
+
+        .text-box p {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #4a332d;
+            font-style: italic;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1.5s ease;
+            transition-delay: 0.4s;
+        }
+
+        /* Image Styling */
+        .image-card {
+            flex: 0.8;
+            position: relative;
+            width: 350px;
+            height: 450px;
+            border-radius: 100px 100px 20px 20px;
+            overflow: hidden;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.1), -5px -5px 20px rgba(255,255,255,0.5);
+            border: 8px solid #fff;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(20%);
+            transition: transform 2s ease;
+        }
+
+        .image-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #b36a5e;
+            z-index: 3;
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        /* Reveal State */
+        .reveal .text-box h2, 
+        .reveal .text-box p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal .image-card .overlay {
+            transform: translateY(-100%);
+        }
+
+        .reveal .image-card img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 850px) {
+            .container { flex-direction: column-reverse; text-align: center; }
+            .image-card { width: 280px; height: 380px; }
+            .text-box { padding: 25px; }
+            .text-box h2 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<section class="for-him">
+    <div class="container">
+        <div class="text-box">
+            <h2>A Heart Still Waiting</h2>
+            <p>
+                To you, my dearest,<br>
+                I know our story is not complete, but I am still waiting.<br><br>
+                I don’t know what the future holds, but I want to see you happy — even if it’s not with me.<br><br>
+                My heart can’t fully pray for you to be happy with anyone else, but I try anyway.<br>
+                Every day, I send silent prayers, wishing you joy, peace, and love.<br><br>
+                Though our paths may have diverged, my heart remains yours quietly, and I will keep waiting... hoping that life might still bring you back to me one day.
+            </p>
+        </div>
+
+        <div class="image-card">
+            <div class="overlay"></div>
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=600" alt="Single Rose">
+        </div>
+    </div>
+</section>
+
+<script>
+    const section = document.querySelector('.for-him');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                section.classList.add('reveal');
+            }
+        });
+    }, {threshold: 0.3});
+
+    observer.observe(section);
+
+    // Create hearts INSIDE the section only
+    function createHearts() {
+        for(let i=0; i<12; i++) {
+            let heart = document.createElement('div');
+            heart.className = 'heart-float';
+            heart.innerHTML = '❤';
+            // FIX: Using % instead of vw to stay within section bounds
+            heart.style.left = Math.random() * 100 + '%'; 
+            heart.style.animationDelay = Math.random() * 8 + 's';
+            heart.style.fontSize = (Math.random() * 15 + 12) + 'px';
+            section.appendChild(heart);
+        }
+    }
+    
+    createHearts();
+</script>
+
+</body>
+</html>

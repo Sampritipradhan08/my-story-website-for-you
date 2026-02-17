@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>A website for memorable our story for forever and ever</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Lora:ital@1&family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+<audio id="bgMusic" loop>
+    <source src="assets/Dhun.m4a" type="audio/mpeg"> </audio>
+
+<div class="music-control">
+    <button id="musicBtn" onclick="toggleMusic()">
+        <span id="musicIcon">🎵</span>
+    </button>
+</div>
+
+
+<!---  nav bar-->
+<nav>
+    <a href="index.html"><span>Home</span></a>
+    <a href="Our_story.html"><span>Our Story</span></a>
+    <a href="memory.html"><span>Memories</span></a>
+    <a href="letter.html"><span>Letter</span></a>
+    <a href="bottle.html"><span>Wish</span></a>
+     <a href="iff.html"><span>Message</span></a>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+<!---  Front-page  -->
+<div class="front-page">
+ <div class="bg-overlay"></div>
+
+    <div class="cover-container">
+        <div class="rose-frame">
+            <img src="assets/pg3.webp" alt="Single Rose">
+        </div>
+
+       <h1 data-aos="fade-down" data-aos-delay="300">An Incomplete Story</h1>
+
+        <div class="quote-box">
+            <p>
+                "Some stories are never finished, yet they remain softly written in the heart — like a rose pressed between the pages of a book that was never meant to close."
+            </p>
+        </div>
+
+      <div class="scroll-hint" onclick="scrollToContent()" style="cursor: pointer;">
+    <p style="font-size: 0.8rem; letter-spacing: 2px; font-style: normal; margin-bottom: 10px;">SCROLL TO REMEMBER</p>
+    <span></span>
+</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!--For you -->
+
+<section class="for-him">
+ <div class="container" >
+        <div class="text-box">
+            <h2>A Heart Still Waiting</h2>
+            <p>
+                To you, my dearest,<br>
+                I know our story is not complete, but I am still waiting.<br><br>
+                I don’t know what the future holds, but I want to see you happy — even if it’s not with me.<br><br>
+                My heart can’t fully pray for you to be happy with anyone else, but I try anyway.<br>
+                Every day, I send silent prayers, wishing you joy, peace, and love.<br><br>
+                Though our paths may have diverged, my heart remains yours quietly, and I will keep waiting... hoping that life might still bring you back to me one day.
+            </p>
+        </div>
+
+        <div class="image-card">
+            <div class="overlay"></div>
+            <img src="assets/he.jpeg" alt="Single Rose">
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="first-love-section">
+    <div class="soul-container">
+        
+        <div class="photo-frame" data-aos="fade-right">
+            <img src="assets/she.jpeg" alt="Memory">
+            <div class="caption">The first love...</div>
+        </div>
+
+        <div class="message-content" data-aos="fade-left">
+            <span class="sub-caption">Words I will never say</span>
+            <h2 class="soul-message-title">Echoes of my Silence</h2>
+            <p>
+               You know, Gobindo, you were my first love… or maybe I shouldn’t say were, because you are still here,<br> and perhaps you always will be. I don’t know why the universe separated us, but believe me, not a single day has passed that I haven’t thought of you.
+
+I love you… maybe I never knew how to show it the way I wanted to.<br> You know, I think of you so often, and when I do, I look at your pictures. It hurts sometimes,<br> I know—I was selfish, and that’s why seeing you with someone else feels painful—but I know, someday, <br>I will get used to it.
+
+I tried to forget you, but I couldn’t… so I stopped trying.<br> As long as I live, I will live with this ache, and somehow, that’s what keeps me going. I miss you so much… something I will never say out loud.
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <header class="header">
+        <p data-aos="fade-down">A journey of us</p>
+        <h1 data-aos="zoom-in">Our Beautiful Memories</h1>
+    </header>
+
+    <div class="timeline">
+
+        <div class="memory-item">
+            <div class="dot"></div>
+            <div class="content floating" data-aos="fade-right">
+                <h3>🌹 First Date</h3>
+                <p>At breze, holding hands, sharing sweet little lies. That first spark that started everything...</p>
+            </div>
+            <div class="image-box" data-aos="fade-left">
+                <img src="assets/fdate.webp" alt="First Date">
+            </div>
+        </div>
+
+        <div class="memory-item">
+            <div class="dot"></div>
+            <div class="content floating" data-aos="fade-left">
+                <h3>🌊 Durga Puja Trip</h3>
+                <p>The sound of waves and your presence. We wandered around the sea—it became my favorite place because of you.</p>
+            </div>
+            <div class="image-box" data-aos="fade-right">
+                <img src="assets/seahim.webp" alt="Sea Trip">
+            </div>
+        </div>
+
+        <div class="memory-item">
+            <div class="dot"></div>
+            <div class="content floating" data-aos="fade-right">
+                <h3>❤️ Starting Dating</h3>
+                <p>Sharing our deepest thoughts and coming closer every day. Understanding each other's silence was the best part.</p>
+            </div>
+            <div class="image-box" data-aos="fade-left">
+                <img src="assets/dating.jpg" alt="Starting Dating">
+            </div>
+        </div>
+
+        <div class="memory-item">
+            <div class="dot"></div>
+            <div class="content floating" data-aos="fade-left">
+                <h3>🎂 Birthday Surprise</h3>
+                <p>The joy on your face was worth all the planning. A special surprise for a special person.</p>
+            </div>
+            <div class="image-box" data-aos="fade-right">
+                <img src="assets/bdd.avif" alt="Birthday Surprise">
+            </div>
+        </div>
+
+        <div class="memory-item">
+            <div class="dot"></div>
+            <div class="content floating" data-aos="fade-right">
+                <h3>🎁 Little Tokens of Love</h3>
+                <p>A simple T-shirt and a key ring. It’s not about the gift, it’s about the thought of you while I was away.</p>
+            </div>
+            <div class="image-box" data-aos="fade-left">
+                <img src="assets/gift.webp" alt="Gift">
+            </div>
+        </div>
+
+        <div class="memory-item">
+            <div class="dot"></div>
+            <div class="content floating" data-aos="fade-left">
+                <h3>☕ Tea & Late Night Calls</h3>
+                <p>Tea on an empty street, endless late-night talks, and those funny interruptions from family. Pure magic.</p>
+            </div>
+            <div class="image-box" data-aos="fade-right">
+                <img src="assets/tea.jpg" alt="Special Date">
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<section class="letter-section">
+    <p class="soul-caption">Message from my soul</p>
+    <h2 class="section-title">The Unsaid Words</h2>
+    
+    <div class="envelope-box" onclick="openLetter()">
+        <div class="wax-seal">❤</div>
+    </div>
+    
+    <p class="click-hint">Tap the seal to open</p>
+</section>
+
+<div class="letter-overlay" id="letterOverlay">
+    <div class="letter-paper">
+        <span class="close-btn" onclick="closeLetter()">&times;</span>
+        <div class="paper-content">
+            <b>To You...</b>
+            I know everything that happened between us, and I am truly, deeply sorry. Even today, my heart feels heavy… but everything I did back then, I did out of frustration.<br><br>
+            What could I have done? You weren’t with me, and everything between us seemed to be falling apart in the worst way. In that moment, I lost <span class="highlight">Dimoni</span>… I couldn’t think straight, and I wasn’t seeing things clearly at all.<br><br>
+            I know maybe 60% of the fault lies with you, and 40% with me. But even if I wanted to, I can’t say anything to you now… someone else is in your life, you have a girlfriend. I would never want to cause any trouble for you or your happiness.<br><br>
+            Even now, I remember so many things about you… so many songs and memories hold you close in my heart. <span class="highlight">I remember when you promised to let me eat chowmein from your hand</span>—every time I see chowmein, I can’t eat it because it reminds me of you.<br><br>
+            Some places hold our memories… some places, every day, I think of you. I don’t know why, I don’t know what this connection is between us, but somehow… it’s there, quietly lingering, like a small, unspoken thread.<br><br>
+            Just know this—when the day comes that I leave this city, I will come to you properly and apologize. Until then, these words and memories will stay in my heart… quietly, sincerely.<br><br>
+            <i style="color: #b36a5e; font-size: 1.3rem; display: block; margin-top: 30px;">Always wishing for your peace.</i>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="final-footer">
+        <div class="footer-container">
+            
+            <div class="coder-caption">
+    &lt;coder_logic&gt; I just want to keep my love alive, no matter what it takes. &lt;/coder_logic&gt;
+</div>
+
+<div class="soul-message" data-aos="zoom-in"></div>
+    "So yeah, this is for you. I don’t know if you’ll ever see this… but if you do, for the very last time—<b>I love you, forever and always.</b>"
+</div>
+
+
+            <div class="footer-bottom">
+                <div class="system-status">
+                    <span class="pulse-dot"></span>
+                    <span>Love.commit(status: "Waiting Forever")</span>
+                </div>
+                <p class="copyright">© 2026 | Designed with Tears and Code</p>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+
+
+AOS.init({
+    duration: 800, 
+    once: true,    
+});
+
+
+
+
+
+
+
+var audio = document.getElementById("bgMusic");
+var btn = document.getElementById("musicBtn");
+var icon = document.getElementById("musicIcon");
+
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+        icon.innerHTML = "⏸️"; // Pause icon
+        btn.style.animation = "pulse 2s infinite"; // Optional: playing thakle pulse effect
+    } else {
+        audio.pause();
+        icon.innerHTML = "🎵"; // Play icon
+        btn.style.animation = "none";
+    }
+}
+
+// Browser autoplay block korle, user screen-e click korlei jate music start hoy
+window.addEventListener('click', function() {
+    if (audio.paused) {
+        // audio.play(); // Jodi auto play chan tobe eita un-comment korun
+    }
+}, { once: true });
+
+
+
+
+
+
+
+
+    const section = document.querySelector('.for-him');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                section.classList.add('reveal');
+            }
+        });
+    }, {threshold: 0.3});
+
+    observer.observe(section);
+
+    // Create hearts INSIDE the section only
+    function createHearts() {
+        for(let i=0; i<12; i++) {
+            let heart = document.createElement('div');
+            heart.className = 'heart-float';
+            heart.innerHTML = '❤';
+            // FIX: Using % instead of vw to stay within section bounds
+            heart.style.left = Math.random() * 100 + '%'; 
+            heart.style.animationDelay = Math.random() * 8 + 's';
+            heart.style.fontSize = (Math.random() * 15 + 12) + 'px';
+            section.appendChild(heart);
+        }
+    }
+    
+    createHearts();
+
+
+
+
+
+
+
+
+
+
+
+
+   function openLetter() {
+    // This ID 'letterOverlay' must match exactly with <div id="letterOverlay">
+    const overlay = document.getElementById('letterOverlay');
+    if (overlay) {
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Stop scrolling when open
+    }
+}
+
+function closeLetter() {
+    const overlay = document.getElementById('letterOverlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Resume scrolling when closed
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function scrollToContent() {
+    document.querySelector('.for-him').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+</script>
+
+
+
+</body>
+</html>

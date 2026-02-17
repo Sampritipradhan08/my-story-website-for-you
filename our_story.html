@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter One</title>
+
+    <style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Georgia", serif;
+        }
+
+        body {
+            background: #f4ecd8;
+            color: #5c4326;
+            line-height: 1.6;
+        }
+
+
+
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Georgia", serif;
+}
+
+/* Old book background */
+body{
+    background:#f4ecd8;
+}
+
+/* NAVBAR */
+nav{
+    background:#fdf6e3;
+    padding:20px 60px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    border-bottom:1px solid #d6c7a1;
+}
+
+/* NAV LINKS */
+nav a{
+    position:relative;
+    text-decoration:none;
+    color:#5c4326;
+    font-size:18px;
+    padding:10px 18px;
+    letter-spacing:1px;
+    transition:0.3s ease;
+}
+
+/* Elegant border animation using pseudo elements */
+nav a::before,
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    background:#8b6f47;
+    transition:0.4s ease;
+}
+
+nav a::before{
+    top:0;
+    left:0;
+}
+
+nav a::after{
+    bottom:0;
+    right:0;
+}
+
+/* Vertical borders */
+nav a span::before,
+nav a span::after{
+    content:"";
+    position:absolute;
+    height:0%;
+    width:2px;
+    background:#8b6f47;
+    transition:0.4s ease;
+}
+
+nav a span::before{
+    top:0;
+    left:0;
+}
+
+nav a span::after{
+    bottom:0;
+    right:0;
+}
+
+/* Hover effect */
+nav a:hover::before,
+nav a:hover::after{
+    width:100%;
+}
+
+nav a:hover span::before,
+nav a:hover span::after{
+    height:100%;
+}
+
+/* Soft hover text color */
+nav a:hover{
+    color:#8b6f47;
+}
+
+
+        /* Common style for all chapters */
+        .container, .section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            border-bottom: 1px dashed #8b6f47;
+            overflow: hidden;
+            text-align: center; /* Center all text */
+        }
+
+        .content {
+            max-width: 800px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        h1, h3 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #5c4033;
+            letter-spacing: 2px;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 18px;
+            letter-spacing: 3px;
+            color: #8b6f47;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #3e2f23;
+            margin-bottom: 20px;
+            max-width: 700px; /* Text reading comfort er jonno */
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInText 2s ease forwards;
+        }
+
+        /* Side Images */
+        .left-img, .right-img {
+            position: absolute;
+            width: 180px;
+            bottom: 40px;
+            opacity: 0.7;
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+
+        .left-img { left: 40px; }
+        .right-img { right: 40px; }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .left-img, .right-img {
+                width: 80px;
+                bottom: 20px;
+            }
+            .left-img { left: 10px; }
+            .right-img { right: 10px; }
+            h1, h3 { font-size: 24px; }
+            p { font-size: 17px; }
+        }
+
+
+
+        .music-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+}
+
+#musicBtn {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px); /* Modern blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#musicBtn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+    </style>
+</head>
+
+<body>
+
+    
+<div class="music-control">
+    <button id="musicBtn" onclick="toggleMusic()">
+        <span id="musicIcon">⏸️</span>
+    </button>
+</div>
+
+<audio id="bgMusic" loop autoplay> <source src="assets/go.m4a" type="audio/mpeg">
+</audio>
+
+<nav>
+    <a href="index.html"><span>Home</span></a>
+    <a href="Our_story.html"><span>Our Story</span></a>
+    <a href="memory.html"><span>Memories</span></a>
+    <a href="letter.html"><span>Letter</span></a>
+    <a href="bottle.html"><span>Wish</span></a>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+
+        <!-- Left Picture -->
+        <img src="assets/rs2.png"
+             class="left-img">
+
+        <!-- Story Content -->
+        <div class="content">
+            <h2>Chapter One</h2>
+            <h3>It Started With a Message</h3>
+
+            <p>
+                One ordinary day, a notification appeared on her screen.
+                It was from him.
+            </p>
+
+            <p>
+                They already knew each other — not strangers,
+                just two familiar names in each other’s world.
+                But that day felt different.
+            </p>
+
+            <p>
+                He told her that he liked her.
+                Simple words. No drama.
+                Yet her heart paused for a second.
+            </p>
+
+            <p>
+                Neither of them knew that something quiet
+                had just begun —
+                a journey they didn’t plan,
+                a story they didn’t expect.
+            </p>
+
+            <p>
+                They became good friends.
+                They talked for hours.
+                They laughed.
+                And for the first time,
+                she felt something she had never felt before.
+            </p>
+        </div>
+
+        <!-- Right Picture -->
+        <img src="assets/rr.png"
+             class="right-img">
+
+    </div>
+
+
+     <div class="container">
+
+        <!-- Left Picture -->
+        <img src="assets/rs2.png"
+             class="left-img">
+
+        <!-- Story Content -->
+        <div class="content">
+            <h2>Chapter Two</h2>
+            <h3>When It Became “Us”</h3>
+
+            <p>
+                Days passed, and their conversations became
+                the favorite part of each day.
+            </p>
+
+            <p>
+                What started as friendship slowly turned into
+                something deeper, something warmer.
+            </p>
+
+            <p>
+                One day, with a nervous heart,
+                he finally said the words —
+                he asked her to be his.
+            </p>
+
+            <p>
+                In that moment, everything felt magical.
+                No doubts. No fears.
+                Just two hearts choosing each other.
+            </p>
+
+            <p>
+                And that was the day their real story began —
+                filled with laughter, late-night talks,
+                and a happiness they had never known before.
+            </p>
+        </div>
+
+        <!-- Right Picture -->
+        <img src="assets/rr.png"
+             class="right-img">
+
+    </div>
+
+
+
+
+
+
+
+
+     <div class="container">
+
+        <!-- Left Image -->
+        <img src="assets/rs2.png"
+             class="left-img">
+
+        <!-- Content -->
+        <div class="content">
+            <h2>Chapter Three</h2>
+            <h3>The Quiet Promises</h3>
+
+            <p>
+                She was an introvert.
+                Words were never easy for her.
+            </p>
+
+            <p>
+                She felt deeply,
+                but expressing it was always the hardest part.
+            </p>
+
+            <p>
+                Still, she made sure he knew —
+                that her love was real,
+                and it was only for him.
+                Not for a moment,
+                but for as long as her heart could feel.
+            </p>
+
+            <p>
+                They shared something no one else understood.
+                She had lost her father.
+                He had lost his mother.
+            </p>
+
+            <p>
+                Somewhere between their laughter and late-night talks,
+                they found comfort in each other’s pain.
+            </p>
+
+            <p>
+                It wasn’t just love.
+                It was healing.
+                Two incomplete hearts,
+                quietly choosing each other.
+            </p>
+        </div>
+
+        <!-- Right Image -->
+        <img src="assets/rr.png"
+             class="right-img">
+
+    </div>
+
+
+
+
+
+
+
+
+
+      <div class="container">
+
+        <!-- Left Image -->
+        <img src="assets/rs2.png"
+             class="left-img">
+
+        <!-- Content -->
+        <div class="content">
+            <h2>Chapter Four</h2>
+            <h3>When the Storm Began</h3>
+
+            <p>
+                Everything was going smoothly.
+                Their days were filled with laughter,
+                comfort, and quiet happiness.
+            </p>
+
+            <p>
+                They didn’t think about the world outside.
+                They didn’t think about families,
+                expectations, or reality.
+            </p>
+
+            <p>
+                It felt simple.
+                It felt safe.
+            </p>
+
+            <p>
+                But sometimes,
+                life changes without warning.
+            </p>
+
+            <p>
+                Slowly, the worst phase of her life began.
+                Responsibilities grew heavier.
+                Silence became longer.
+                Smiles became harder to hold.
+            </p>
+
+            <p>
+                And for the first time,
+                love wasn’t the only thing she had to fight for.
+            </p>
+        </div>
+
+        <!-- Right Image -->
+        <img src="assets/rr.png"
+             class="right-img">
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="section">
+    <h1>Chapter 5 — The Fading Light</h1>
+
+    <p>
+        Everything was going smoothly... like a calm river flowing under golden sunlight.  
+        They were happy in their little world, unaware of the storm waiting ahead.  
+        <br><br>
+        Then one day, his past returned.  
+        His ex came back into his life —  
+        and slowly, everything started to change.  
+        <br><br>
+        The laughter became less.  
+        The calls became shorter.  
+        The warmth became colder.  
+        <br><br>
+        And her world…  
+        the world she built with love and silence…  
+        slowly began to turn dark.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 6 — What God Planned</h1>
+
+    <p>
+        After losing her father…  
+        she felt like she was losing everything.  
+        And slowly, she started losing him too.  
+        <br><br>
+        The arguments grew louder.  
+        The misunderstandings became deeper.  
+        Two hearts that once felt safe  
+        now stood on opposite sides of silence.  
+        <br><br>
+        But maybe… God had more plans for them.  
+        Maybe love was not meant to end like this.  
+        <br><br>
+        After tears, after fights, after painful nights —  
+        they chose each other again.  
+        Not perfectly.  
+        Not easily.  
+        But honestly.  
+        <br><br>
+        And their story…  
+        began once more.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 7 — After 8 Months</h1>
+
+    <p>
+        After eight long months…  
+        they finally went on a date again.  
+        <br><br>
+        It felt new.  
+        It felt nervous.  
+        Yet somehow… it felt like home.  
+        <br><br>
+        They talked for hours.  
+        About pain.  
+        About misunderstandings.  
+        About the nights they both cried silently.  
+        <br><br>
+        He apologized.  
+        She apologized.  
+        Not because love was weak —  
+        but because it mattered.  
+        <br><br>
+        That day, she felt something deeper than before.  
+        Not butterflies.  
+        Not excitement.  
+        But peace.  
+        <br><br>
+        Their bond didn’t just return…  
+        it became stronger.  
+        Stronger than before.  
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 8 — Shadows of the Past</h1>
+
+    <p>
+        Life never stays simple for long.  
+        She thought their love was strong…  
+        until one day, she saw it all.  
+        <br><br>
+        The past conversations.  
+        His chats with his ex.  
+        Revealed by someone she didn’t expect —  
+        his ex’s boyfriend.  
+        <br><br>
+        At that day, they had met each other to spend time together,  
+        but everything suddenly felt heavy.  
+        <br><br>
+        In that moment, she felt the world shift.  
+        Confusion. Pain. Doubt.  
+        <br><br>
+        What was their relationship now?  
+        Were the moments of happiness real?  
+        Or were they just shadows of a story she didn’t know?  
+        <br><br>
+        Her heart was torn between love and fear,  
+        trust and uncertainty.  
+        Everything they built… seemed fragile.  
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 9 — The Birthday Goodbye</h1>
+
+    <p>
+        That day should have been filled with candles, laughter, and celebration.  
+        But for her, the world felt heavy.  
+        Tears blurred her vision as she left him silently.  
+        <br><br>
+        He tried to understand her,  
+        reaching out, speaking softly…  
+        but she wouldn’t listen.  
+        <br><br>
+        Their relationship broke that day,  
+        on her birthday — a day meant for happiness,  
+        now etched with sorrow.  
+        <br><br>
+        She cried herself home,  
+        her heart aching,  
+        yet deep down, she never fully believed it was the end.  
+        <br><br>
+        Love had left a mark too strong to forget,  
+        and trust had been shattered,  
+        but hope…  
+        even a little, remained.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 10 — The Tears of Love</h1>
+
+    <p>
+        After days of silence,  
+        a message appeared on her phone.  
+        His words were trembling,  
+        filled with regret and longing.  
+        <br><br>
+        That evening, he stood in front of her, tears rolling down his cheeks.  
+        His voice cracked as he whispered:  
+        <br><br>
+        "<strong>I can’t live without you. I need you. Please don’t leave me.</strong>"  
+        <br><br>
+        She felt her heart swell,  
+        all the pain and misunderstandings flooding back,  
+        but now mingled with hope.  
+        <br><br>
+        In that moment, they didn’t need words.  
+        Only tears, hugs, and promises.  
+        The love that had once been shaken  
+        now felt stronger, unbreakable,  
+        as if the universe had given them a second chance.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 11 — Festival of Love</h1>
+
+    <p>
+        Slowly, life became smooth again.  
+        She felt safe, loved, and understood.  
+        <br><br>
+        Before he left for his relatives’ home for the festival,  
+        he met her one last time,  
+        holding a single flower in his hand.  
+        <br><br>
+        “I love you,” he whispered softly,  
+        and she smiled, feeling her heart flutter.  
+        <br><br>
+        They laughed together,  
+        teasing and sharing stories,  
+        the kind of laughter that warms the soul.  
+        <br><br>
+        That day, their bond grew even stronger.  
+        Every smile, every hug, every word of love  
+        became a promise that no distance could break.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 12 — Silent Distance</h1>
+
+    <p>
+        After he left for his relatives’ home,  
+        she noticed something changing.  
+        The messages stopped.  
+        Calls became rare.  
+        And for days, she heard nothing from him.  
+        <br><br>
+        At first, she thought he was just busy.  
+        Work, festivals, family obligations…  
+        She trusted him. She loved him.  
+        <br><br>
+        Every day without a message felt a little longer,  
+        but she held onto faith.  
+        She believed in their love,  
+        believing he would come back to her soon.  
+        <br><br>
+        Yet the silence lingered,  
+        and her heart quietly ached,  
+        learning that distance could be heavier than words.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 13 — The Unseen Distance</h1>
+
+    <p>
+        Finally, he came back home.  
+        Her heart fluttered with hope, longing for the warmth they shared.  
+        <br><br>
+        But soon, she noticed it…  
+        The messages weren’t answered.  
+        Calls went unanswered.  
+        And despite being online, he kept ignoring her.  
+        <br><br>
+        She waited, believing he was busy,  
+        holding onto trust and love.  
+        But the truth hurt more than silence.  
+        <br><br>
+        Her heart ached, confusion and fear blending together.  
+        Love felt fragile again,  
+        as if every moment of happiness could slip through her fingers.  
+        <br><br>
+        She realized that sometimes, distance isn’t measured in miles…  
+        but in the unseen walls built between hearts.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 14 — The Hidden Story</h1>
+
+    <p>
+        She was scrolling aimlessly, trying to distract her heart…  
+        when she saw a story.  
+        A girl had shared a post, tagging him.  
+        <br><br>
+        Her chest tightened.  
+        The story was casual, yet it carried a weight she couldn’t ignore.  
+        In that story, the girl mentioned something about him…  
+        something she didn’t understand,  
+        leaving a knot of confusion and pain in her heart.  
+        <br><br>
+        She stared at the screen,  
+        questioning everything —  
+        why was he tagging her?  
+        What had been happening while she trusted him?  
+        <br><br>
+        In that moment, life felt fragile again,  
+        and her heart whispered a silent plea for answers.  
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 15 — The Argument</h1>
+
+    <p>
+        She finally asked him,  
+        her voice trembling but firm,  
+        "<strong>Why did you tag her? Who is she?</strong>"  
+        <br><br>
+        He laughed awkwardly,  
+        claiming, "It’s my sister, nothing else."  
+        <br><br>
+        But she knew it wasn’t true.  
+        Her heart ached,  
+        and confusion burned inside her.  
+        <br><br>
+        Repeatedly, they argued.  
+        Words clashed, voices rose,  
+        neither willing to give ground.  
+        <br><br>
+        She felt betrayed,  
+        though deep down she still loved him.  
+        He tried to explain,  
+        but the tension only grew.  
+        <br><br>
+        That night, their silence was louder than words,  
+        and the walls between them felt higher than ever.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 16 — The Breaking Point</h1>
+
+    <p>
+        Her world shattered again.  
+        She discovered the truth — he had started a relationship with someone else.  
+        <br><br>
+        The pain, betrayal, and exhaustion overwhelmed her.  
+        She felt like she had tolerated too much, and her heart couldn’t take it anymore.  
+        <br><br>
+        She didn’t want to go back home.  
+        She felt lost, hopeless, and alone.  
+        <br><br>
+        For a moment, she thought of ending it all…  
+        but somewhere deep inside, a small voice whispered that life still had a chance,  
+        that there could still be hope, even in the darkest night.  
+        <br><br>
+        And though tears poured and heart ached,  
+        this small voice became her anchor — reminding her that pain can be survived,  
+        and that tomorrow might still bring light.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 17 — The Night of Endless Tears</h1>
+
+    <p>
+        She returned home, her heart heavy as stone.  
+        The world outside felt distant, meaningless.  
+        <br><br>
+        That whole day, she couldn’t eat a single bite.  
+        The night came, but her tears did not stop.  
+        Her sobs echoed in the silent room,  
+        each one carrying the weight of betrayal, loss, and endless pain.  
+        <br><br>
+        She tried to speak, tried to explain her feelings to herself,  
+        but words failed — the feelings were too vast, too raw to capture.  
+        <br><br>
+        Hours passed in darkness,  
+        the night stretching endlessly,  
+        yet somehow, the very act of crying let her heart release a little of the pain she had carried alone.  
+        <br><br>
+        In that night of despair, she realized some feelings cannot be described —  
+        only felt.  
+        And sometimes, surviving the night is the first step toward a new day.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 18 — A New Dawn</h1>
+
+    <p>
+        After months of pain and darkness,  
+        she decided to take control of her life.  
+        <br><br>
+        She sought counseling,  
+        sharing her feelings, fears, and heartbreak with someone who could guide her.  
+        <br><br>
+        Slowly, day by day,  
+        she began to heal.  
+        The tears didn’t disappear overnight,  
+        but they became lighter, more like rain washing away the sorrow.  
+        <br><br>
+        After two months, she started anew —  
+        a life shaped by resilience, courage, and self-love.  
+        She rediscovered her laughter,  
+        her passions, and the simple joys she had forgotten.  
+        <br><br>
+        Though the past left its mark,  
+        she now embraced the future with hope.  
+        The night of endless tears had ended,  
+        and a new dawn had begun.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 19 — A Secret Concern</h1>
+
+    <p>
+        As she embraced her new life,  
+        she noticed something troubling —  
+        he no longer seemed happy.  
+        <br><br>
+        He stopped eating properly,  
+        spending hours alone in his room,  
+        a shadow of the vibrant person she once knew.  
+        <br><br>
+        Her heart ached for him,  
+        and she felt a quiet responsibility,  
+        wondering what could have caused his suffering.  
+        <br><br>
+        With care and caution,  
+        she decided to reach out —  
+        through social media,  
+        hiding her identity,  
+        simply to understand what was happening in his world.  
+        <br><br>
+        Even from afar,  
+        she wanted to ensure he wasn’t lost in his own darkness,  
+        her concern quietly bridging the distance between them.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 20 — Forgiveness and Understanding</h1>
+
+    <p>
+        Even without knowing her identity,  
+        their bond grew stronger with each message.  
+        Laughs, shared stories, and small confessions  
+        bridged the distance between them.  
+        <br><br>
+        Days passed, and he slowly began to understand —  
+        realizing the truth behind the anonymous kindness.  
+        <br><br>
+        One day, without hesitation,  
+        he sent a direct message,  
+        acknowledging his mistakes,  
+        and asking for forgiveness for all the hurt he caused her in the past.  
+        <br><br>
+        "I am truly sorry for last time. Please forgive me," he wrote.  
+        <br><br>
+        She read his words,  
+        her heart softening,  
+        knowing that love, understanding, and patience  
+        had finally brought them back together —  
+        stronger, wiser, and more connected than ever.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 21 — A Last Chance, A New Beginning</h1>
+
+    <p>
+        She realized it — this was the love she wanted,  
+        the one worth taking a risk for.  
+        With a heart full of hope and courage,  
+        she decided to give him a last chance.  
+        <br><br>
+        From that moment, everything changed.  
+        Their days were filled with care, laughter, and understanding.  
+        Even the small, cute fights only made their bond stronger.  
+        <br><br>
+        They celebrated each other’s quirks,  
+        shared secrets, dreams, and fears,  
+        and found joy in the simple moments together.  
+        <br><br>
+        Love was no longer just a feeling —  
+        it was a choice, nurtured every day.  
+        And with each smile, hug, and whispered "I love you,"  
+        they knew that this time, their hearts were truly home.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 22 — The Final Farewell</h1>
+
+    <p>
+        Just when their love seemed strongest,  
+        life threw its hardest blow.  
+        The biggest fight yet erupted —  
+        words cutting deeper than ever before.  
+        <br><br>
+        She saw clearly now.  
+        No amount of love, patience, or hope could fix this.  
+        Her heart whispered the painful truth — it was time to let go.  
+        <br><br>
+        Tears fell freely,  
+        anger, sadness, and heartbreak mixing into a bitter storm.  
+        In that moment, she understood:  
+        some chapters are meant to end,  
+        even if the ending is ugly, raw, and unfair.  
+        <br><br>
+        She took a deep breath,  
+        and with courage born from pain,  
+        she stepped away — closing this chapter of her life,  
+        knowing that endings, no matter how harsh,  
+        are sometimes the beginning of something new for her.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 23 — The Last Confession</h1>
+
+    <p>
+        Her heart could hold no more silence.  
+        With trembling hands and tears in her eyes, she whispered to the world —  
+        <br><br>
+        "I love you. I can’t live without you.  
+        I can’t be in a relationship with anyone else.  
+        But if you are truly mine,  
+        if your heart is real,  
+        you will not be with anyone else…  
+        you will come back to me."  
+        <br><br>
+        Every word carried the weight of months of pain,  
+        every tear a memory of what they had shared.  
+        And with that confession, she left her heart open,  
+        waiting for him,  
+        hoping that love — the love they had fought for, endured, and survived —  
+        might still find its way back.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+
+
+
+
+
+
+
+
+<div class="section">
+    <h1>Chapter 24 — Silent Strength</h1>
+
+    <p>
+        Time moved on.  
+        She remained single,  
+        not seeking another relationship,  
+        for her heart knew some love is irreplaceable.  
+        <br><br>
+        She chose her career, her dreams, and her own happiness,  
+        learning to live with quiet tears that no one could see.  
+        <br><br>
+        Life taught her to find strength in solitude,  
+        to embrace her passions, and to smile,  
+        even when memories of him lingered.  
+        <br><br>
+        Meanwhile, he had moved on,  
+        walking a path with someone else.  
+        Though it stung, she accepted reality —  
+        some chapters are meant to end,  
+        and the beauty lies in learning to rise from them.  
+        <br><br>
+        In the silence of her life,  
+        she discovered resilience,  
+        and the courage to carry her heart forward,  
+        stronger, wiser, and unbroken.
+    </p>
+
+    <img src="assets/rs2.png" class="left-img">
+    <img src="assets/rr.png" class="right-img">
+
+</div>
+<script>
+    
+
+
+
+
+
+var audio = document.getElementById("bgMusic");
+var btn = document.getElementById("musicBtn");
+var icon = document.getElementById("musicIcon");
+
+// Music Volume (ektu komiye deoya bhalo)
+audio.volume = 0.6;
+
+// Function: Music cholle icon change hobe
+function updateIcon() {
+    if (!audio.paused) {
+        icon.innerHTML = "⏸️";
+    } else {
+        icon.innerHTML = "🎵";
+    }
+}
+
+// User-er interaction chara browser play korte deyna, tai ei technique:
+function playMusicOnStart() {
+    audio.play().then(() => {
+        updateIcon();
+    }).catch(error => {
+        console.log("Autoplay waiting for click...");
+    });
+}
+
+// User screen-e kothao prothom click korlei music baja shuru hobe (Autoplay bypass)
+window.addEventListener('click', function() {
+    if (audio.paused) {
+        playMusicOnStart();
+    }
+}, { once: true });
+
+// Manual Toggle Button
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+        icon.innerHTML = "⏸️";
+    } else {
+        audio.pause();
+        icon.innerHTML = "🎵";
+    }
+}
+
+// Page load houar por check kora
+window.onload = playMusicOnStart;
+</script>
+
+
+</body>
+</html>
